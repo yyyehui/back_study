@@ -27,13 +27,13 @@ public class ApplicationContextSameBeanFindTest {
         assertThrows(NoUniqueBeanDefinitionException.class,
                 () -> ac.getBean(MemberRepository.class));
     }
-    @Test
-    @DisplayName("타입으로 조회시 같은 타입이 둘 이상 있으면, 빈 이름을 지정하면 된다")
-    void findBeanByName() {
-        MemberRepository memberRepository = ac.getBean("memerRepoitory1", MemberRepository.class);
-        Assertions.assertThat(memberRepository).isInstanceOf(MemberServiceImpl.class);
-
-    }
+//    @Test
+//    @DisplayName("타입으로 조회시 같은 타입이 둘 이상 있으면, 빈 이름을 지정하면 된다")
+//    void findBeanByName() {
+//        MemberRepository memberRepository = ac.getBean("memerRepoitory1", MemberRepository.class);
+//        Assertions.assertThat(memberRepository).isInstanceOf(MemberServiceImpl.class);
+//
+//    }
 
     @Configuration
     static class SameBeanConfig {
